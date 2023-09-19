@@ -14,6 +14,7 @@ egui_overlay = "0.4.1"
 egui_window_glfw_passthrough = "0.4"
 egui_extras = { version = "0.22.0", features = ["image"] }
 stoppable_thread = "0.2.1"
+flume = "0.11.0"
 
 [target.'cfg(not(target_os = "macos"))'.dependencies]
 egui_render_three_d = "0.4"
