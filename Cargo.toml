@@ -1,0 +1,23 @@
+[package]
+name = "necro_job_gauge"
+version = "0.1.0"
+edition = "2021"
+
+publish = false
+
+[dependencies]
+simple-websockets = "0.1.6"
+image = { version = "0.24.7", features = ["png"] }
+image-base64 = "0.1.0"
+egui_backend = "0.4"
+egui_overlay = "0.4.1"
+egui_window_glfw_passthrough = "0.4"
+egui_extras = { version = "0.22.0", features = ["image"] }
+stoppable_thread = "0.2.1"
+
+[target.'cfg(not(target_os = "macos"))'.dependencies]
+egui_render_three_d = "0.4"
+
+# because opengl doesn't work on macos
+[target.'cfg(target_os = "macos")'.dependencies]
+egui_render_wgpu = { version = "0.4" }
